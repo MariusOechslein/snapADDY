@@ -1,0 +1,11 @@
+<!-- <app-badge-scanning-configuration></app-badge-scanning-configuration> -->
+<div>
+  <h2>Badge Scanning</h2>
+  <h3>Provider</h3>
+  <select (change)="changedProvider()" [(ngModel)]="providerSelected">
+    <option *ngFor="let provider of providerOptions">
+      {{ provider }}
+    </option>
+  </select>
+  <app-dynamic-form [questions]="questions$ | async" [provider]="providerSelected"></app-dynamic-form>
+</div>
